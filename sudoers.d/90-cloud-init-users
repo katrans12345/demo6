@@ -1,4 +1,0 @@
-# Created by cloud-init v. 19.4-33-gbb4131a2-0ubuntu1~18.04.1 on Mon, 21 Sep 2020 15:19:49 +0000
-
-# User rules for devuser
-devuser ALL=(ALL) NOPASSWD:ALL
