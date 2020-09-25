@@ -12,9 +12,8 @@ RUN curl -jkSL -o /tmp/apache-tomcat.tar.gz http://archive.apache.org/dist/tomca
     gunzip /tmp/apache-tomcat.tar.gz && \
     tar -C /opt -xf /tmp/apache-tomcat.tar && \
     ln -s /opt/apache-tomcat-$TOMCAT_VERSION $CATALINA_HOME
-#RUN apk del curl && \
-#    rm -rf /tmp/* /var/cache/apk/*
-RUN cp /home/Project/target/hello-1.0.war /var/lib/tomcat8/webapps/hello.war
+RUN rm -rf /tmp/* /var/cache/apk/*
+RUN cp /home/Project/target/hello-1.0.war /opt/tomcat/webapps/hello.war
 EXPOSE 8080
 COPY startup.sh /opt/startup.sh
 ENTRYPOINT /opt/startup.sh
