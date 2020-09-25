@@ -3,7 +3,7 @@ RUN apt-get update
 RUN apt-get install maven git tomcat8 default-jdk -y
 RUN mkdir /home/Project
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git /home/Project
-RUN mvn -f /home/Project/boxfuse-sample-java-war-hello/pom.xml
-RUN cp /home/Project/boxfuse-sample-java-war-hello/target/hello-1.0.war /var/lib/tomcat8/webapps/hello.war
+RUN mvn -f /home/Project/pom.xml
+RUN cp /home/Project/target/hello-1.0.war /var/lib/tomcat8/webapps/hello.war
 EXPOSE 8080
 CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
