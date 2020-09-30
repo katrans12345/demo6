@@ -4,12 +4,12 @@ services:
     build: maven
     volumes:
       - project:/home/Project/target
-
-  image: tomcat:8.5-jre8
+  tomcat:
+    image: tomcat:8.5-jre8
     ports:
       - "81:8080"
     volumes:
       - project:/webapps
-  volumes:
-    project:
-      driver: local
+volumes:
+  project:
+    driver: local
