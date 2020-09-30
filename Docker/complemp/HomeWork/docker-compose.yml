@@ -1,20 +1,15 @@
-version: '3.8'
+version: '3.7'
 services:
   maven:
     build: maven
     volumes:
-    - type: volume
-        source: project
-        target: /home/Project/target
+      - project:/home/Project/target
 
   image: tomcat:8.5-jre8
     ports:
-      - "80:8080"
+      - "81:8080"
     volumes:
-      - type: volume
-          source: project
-          target: /webapps
-
+      - project:/webapps
   volumes:
     project:
       driver: local
