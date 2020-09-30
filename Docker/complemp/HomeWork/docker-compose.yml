@@ -16,5 +16,5 @@ services:
           target: /webapps
 
   volumes:
-    project:
+    project: /tmp
       driver: local
