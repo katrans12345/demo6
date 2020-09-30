@@ -9,7 +9,7 @@ services:
     ports:
       - "81:8080"
     volumes:
-      - project: /usr/local/tomcat/webapps
+      - project:/usr/local/tomcat/webapps
 volumes:
   project:
     driver: local
