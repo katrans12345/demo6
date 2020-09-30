@@ -5,7 +5,7 @@ services:
     volumes:
     - type: volume
         source: project
-        target: /home/Project/target/
+        target: /home/Project/target
 
   image: tomcat:8.5-jre8
     ports:
