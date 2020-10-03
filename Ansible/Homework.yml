@@ -33,12 +33,17 @@
   become: yes
 
   tasks:
+    - name: Install default-jdk
+      apt:
+        name: default-jdk
+        state: present
+
     - name: Install tomcat
       apt:
-        name: tomcat
+        name: tomcat8
         state: present
 
     - name: Ensure tomcat service started
       service:
-        name: tomcat
+        name: tomcat8
         state: started
