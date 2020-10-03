@@ -27,3 +27,18 @@
 
     - name: Maven Build
       shell: mvn package -f /home/Project/pom.xml
+
+- name: Install tomcat
+  hosts: tomcat
+  become: yes
+
+  tasks:
+    - name: Install tomcat
+      apt:
+        name: tomcat
+        state: present
+
+    -name: Ensure tomcat service started
+      service:
+        name: tomcat
+        state: started
