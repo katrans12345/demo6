@@ -28,6 +28,10 @@
     - name: Maven Build
       shell: mvn package -f /home/Project/pom.xml
 
+    - name: Copy project in master
+      fetch:
+        src: /home/Project/targer/hello-1.0.war
+        dest: /home/hello.war
 - name: Install tomcat
   hosts: tomcat
   become: yes
@@ -48,8 +52,7 @@
         name: tomcat8
         state: started
 
-    - name: COPY package in tomcat
-      synchronize:
-        src: /home/Project/target/hello-1.0.war
+    - name: Copy war int tomcat serv
+      copy:
+        src: /home/hello.war
         dest: /var/lib/tomcat8/webapps/hello.war
-      delegate_to: maven
