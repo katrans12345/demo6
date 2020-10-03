@@ -31,7 +31,7 @@
     - name: Copy project in master
       fetch:
         src: /home/Project/target/hello-1.0.war
-        dest: /home/hello.war
+        dest: /home
 - name: Install tomcat
   hosts: tomcat
   become: yes
