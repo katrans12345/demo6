@@ -9,6 +9,11 @@
         name: maven
         state: present
 
+    - name: Install Git
+      apt:
+        name: git
+        state: present
+
     - name : Create Directory /home/Project
       file:
         path: /home/Project
