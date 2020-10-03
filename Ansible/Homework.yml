@@ -16,8 +16,9 @@
 
     - name: Git Clone
       git:
-        repo: 'https://github.com/boxfuse/boxfuse-sample-java-war-hello.git'
+        repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
         dest: /home/Project
+        clone: yes
 
     - name: Maven Build
       shell: mvn package -f /home/Project/pom.xml
