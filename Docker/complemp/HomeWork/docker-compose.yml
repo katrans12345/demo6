@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  maven:
+    build: maven
+    volumes:
+      - project:/home/Project/target
+  tomcat:
+    image: tomcat:8.5-jre8
+    ports:
+      - "81:8080"
+    volumes:
+      - project:/usr/local/tomcat/webapps
+volumes:
+  project:
+    driver: local
