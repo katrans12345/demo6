@@ -38,7 +38,7 @@
         name: tomcat
         state: present
 
-    -name: Ensure tomcat service started
+    - name: Ensure tomcat service started
       service:
         name: tomcat
         state: started
