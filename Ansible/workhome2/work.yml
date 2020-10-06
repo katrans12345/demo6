@@ -1,0 +1,14 @@
+---
+- name: Build
+  hosts: maven
+  become: yes
+
+  roles:
+    - build
+
+- name: Prodact
+  hosts: tomcat
+  become: yes
+
+  roles:
+    - prod

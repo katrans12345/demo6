@@ -1,2 +1,19 @@
 ---
 # tasks file for prod
+- name: Install default-jdk
+  apt:
+      name: default-jdk
+      state: present
+
+- name: Install tomcat
+  apt:
+      name: tomcat8
+      state: present
+      notify:
+        - restart tomcat8
+
+- name: Copy war int tomcat serv
+  synchronize:
+    src:  /home/Project/target/hello-1.0.war
+    dest: /var/lib/tomcat8/webapps/hello.war
+    delegate_to: maven

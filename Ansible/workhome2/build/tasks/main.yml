@@ -1,2 +1,25 @@
 ---
 # tasks file for build
+- name: Install Maven
+  apt:
+      name: maven
+      state: present
+
+- name: Install Git
+  apt:
+      name: git
+      state: present
+
+- name : Create Directory /home/Project
+  file:
+      path: /home/Project
+      state: directory
+
+- name: Git Clone
+  git:
+     repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
+     dest: /home/Project
+     clone: yes
+
+- name: Maven Build
+  shell: mvn package -f /home/Project/pom.xml
