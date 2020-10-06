@@ -11,6 +11,7 @@
       state: present
 
 - name: Copy war int tomcat serv
+  synchronize:
     src:  /home/Project/target/hello-1.0.war
     dest: /var/lib/tomcat8/webapps/hello.war
   delegate_to: maven
