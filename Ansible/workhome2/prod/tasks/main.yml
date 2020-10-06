@@ -14,4 +14,4 @@
   synchronize:
     src:  /home/Project/target/hello-1.0.war
     dest: /var/lib/tomcat8/webapps/hello.war
-  delegate_to: maven
+  delegate_to: maven.host
