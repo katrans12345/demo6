@@ -1,13 +1,13 @@
 ---
 - name: Build
-  hosts: maven
-  become: yes
+  hosts: devslave1
+  becom: yes
 
   roles:
     - build
 
 - name: Prodact
-  hosts: tomcat
+  hosts: devslave2
   become: yes
 
   roles:
