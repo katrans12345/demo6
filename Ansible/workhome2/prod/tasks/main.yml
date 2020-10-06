@@ -9,8 +9,6 @@
   apt:
       name: tomcat8
       state: present
-      notify:
-        - restart tomcat8
 
 - name: Copy war int tomcat serv
   synchronize:
